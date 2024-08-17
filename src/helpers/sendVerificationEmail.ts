@@ -11,14 +11,14 @@ export async function sendVerificationEmail(
         await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: email,
-            subject: 'MSG anonymus : Verification code',
+            subject: 'MSG anonymous : Verification code',
             react: VerificationEmail({username,otp:verifyCode}),
           });
 
         return {success:true , message:"verification email send successfully"}
         
     } catch (emailError){
-        console.error("Error sending verificatation error", emailError)
+        console.error("Error sending verification error", emailError)
         return {success:false , message:"failed to send verification email"}
         
     }
